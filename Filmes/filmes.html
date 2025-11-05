@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Filme - Space Flix</title>
+
+    <!-- Importando uma fonte para combinar com o design (opcional, mas recomendado) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Link para o arquivo de CSS -->
+    <link rel="stylesheet" href="filmes.css">
+</head>
+<body>
+
+    <!-- Botão de Voltar no canto superior esquerdo -->
+    <a href="/Central/home.html" class="voltar">
+        <img src="voltar.png" alt="Voltar">
+    </a>
+
+    <main class="container">
+        <!-- Coluna da Esquerda: Pôster e Informações -->
+        <div class="coluna_filme">
+            <img src="poster.png" alt="Pôster do Filme" class="movie-poster">
+            
+            <div class="descricao">
+                <h2>RESUMO</h2>
+                <p>
+                    Lorem ipsum is simply dummy text of the printing and 
+                    typesetting industry. Lorem Ipsum has been the industry's 
+                    standard dummy text ever since the 1500s, when an unknown 
+                    printer took a galley of type and scrambled it to make a type 
+                    specimen book. It has survived not only five like).
+                </p>
+                <div class="botoes">
+                    <button class="btn-watch">ASSISTIR</button>
+                    <a href="https://www.imdb.com/pt/title/tt0120382/">
+                        <button class="btn-imdb"> Ver IMDB</button>
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="video">
+            <iframe 
+                src="teste.mp4"
+                class="video_player"
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+    </main>
+
+</body>
+</html>

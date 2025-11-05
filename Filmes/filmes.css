@@ -1,0 +1,86 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    background-image: url('fundo.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.voltar {
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    width: 50px;
+    height: 50px;
+}
+
+.voltar img{
+    width: 30px;
+    height: 35px;
+}
+
+
+.container {
+    display: flex;
+    gap: 50px;
+    width: 100%;
+}
+
+.coluna_filme {
+    flex: 1; 
+    max-width: 400px;
+}
+
+.movie-poster {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.descricao h2 {
+    font-size: 40px;
+    text-transform: uppercase;
+}
+
+.descricao p {
+    line-height: 18.5px;
+    color: white;
+}
+
+.botoes {
+    display: flex;
+    gap: 15px; 
+}
+
+.botoes button {
+    border: none;
+    border-radius: 20px;
+    padding: 15px 30px;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700px;
+    background-color: #8e44ad; 
+}
+
+.botoes button:hover {
+    background-color: #9b59b6; 
+    box-shadow: 0 5px 15px rgba(142, 68, 173, 0.4);
+}
+
+.video {
+    flex: 2;
+}
+
+.video_player {
+    width: 100%;
+    aspect-ratio: 16 / 8; 
+    background-color: #d3d3d3;
+    border-radius: 15px; 
+}
