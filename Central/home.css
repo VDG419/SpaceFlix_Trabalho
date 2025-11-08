@@ -23,6 +23,12 @@ header {
     margin-bottom: 40px;
 }
 
+.barraPesquisa{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    
+}
 .barraPesquisa img {
     height: 50px;
 }
