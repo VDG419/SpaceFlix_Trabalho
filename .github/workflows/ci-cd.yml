@@ -1,0 +1,63 @@
+name: CI/CD - SpaceFlix
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  ci:
+    name: Validar HTML
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Baixar o código do projeto
+        uses: actions/checkout@v4
+
+      - name: Preparar o Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Instalar o validador de HTML
+        run: npm install --global htmlhint@1.1.4
+
+      - name: Verificar a existência da página inicial
+        run: test -s index.html
+
+      - name: Validar os arquivos HTML
+        run: htmlhint "**/*.html"
+
+  deploy:
+    name: Publicar no GitHub Pages
+    needs: ci
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+
+    permissions:
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Baixar o código do projeto
+        uses: actions/checkout@v4
+
+      - name: Configurar o GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Preparar os arquivos do site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: Publicar o site
+        id: deployment
+        uses: actions/deploy-pages@v4
